@@ -1,1 +1,15 @@
-<p>hello world</p>
+ {% extends 'base.html.twig' %}
+{# Titre de la page #}
+{% block title %}Mon titre{% endblock %}
+{# Ici vous mettez vos codes HTML et balises Twig au besoin #}
+{% block body %}
+<p>Mon contenu dans ce block</p>
+ bonjour {{ firstname|slice(1) }}
+{% if firstname is same as 'Pierre' %}
+<p>Vous êtes Pierre</p>
+{% else %}
+<p>Vous n'êtes pas Pierre !</p>
+{% endif %}
+<button type="button" class="btn btn-primary">Primary</button><br>
+<a href="{{ path('app_main') }}" title="Mon autre page">Lien</a>
+{% endblock %}

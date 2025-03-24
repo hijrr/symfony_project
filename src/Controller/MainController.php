@@ -15,12 +15,18 @@ final class MainController extends AbstractController
             'controller_name' => 'MainController',
         ]);
     }
-    #[Route('/home/{var}', name: 'home',requirements:['var'=>'\d+'])]
+    #[Route('/home', name: 'home',requirements:['var'=>'\d+'])]
     public function home(): Response
     {
         return $this->render('main/home.html.twig', [
+            'firstname'=>'john',
+        ]);
+    } 
+    #[Route('/main2', name: 'app_main2')]
+    public function main2(): Response
+    {
+        return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
         ]);
     }
-   
 }
